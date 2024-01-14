@@ -20,26 +20,59 @@ class _registerState extends State<register> {
 
 
 
-  Future<void> _register() async {
-    final response = await http.post(
-      Uri.parse('https://kgenz.site/registerAndroid'),
-      headers: <String, String>{'Content-Type': 'application/json'},
-      body: jsonEncode(<String, String>{
-        'fullname': _fullNameController.text,
-        'email': _emailController.text,
-        'password': _passwordController.text,
-      }),
+  Future<void> _register(String a, String b) async {
+
+    if(a == b){
+
+      final response = await http.post(
+        Uri.parse('https://kgenz.site/registerAndroid'),
+        headers: <String, String>{'Content-Type': 'application/json'},
+        body: jsonEncode(<String, String>{
+          'fullname': _fullNameController.text,
+          'email': _emailController.text,
+          'password': _passwordController.text,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        // Registrasi berhasil
+        print('Registrasi berhasil');
+        _showLoginScreen();
+      } else {
+        // Registrasi gagal
+        print('Registrasi gagal');
+        print(response.statusCode);
+      }
+    }else{
+      print("Test");
+      _showAlertDialog(context, 'Warning!!','Password tidak sama!');
+    }
+
+  }
+
+  void _showAlertDialog(BuildContext context, String title, String content) {
+    // Membuat AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(title),
+      content: Text(content),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () {
+            // Tutup alert
+            Navigator.of(context).pop();
+          },
+          child: Text('OK'),
+        ),
+      ],
     );
 
-    if (response.statusCode == 200) {
-      // Registrasi berhasil
-      print('Registrasi berhasil');
-      _showLoginScreen();
-    } else {
-      // Registrasi gagal
-      print('Registrasi gagal');
-      print(response.statusCode);
-    }
+    // Panggil showDialog untuk menampilkan AlertDialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   void _showLoginScreen() {
@@ -176,8 +209,14 @@ class _registerState extends State<register> {
               child: TextButton(style: TextButton.styleFrom(
                 backgroundColor: Color.fromRGBO(17, 0, 158, 1),
 
-              ),onPressed: _register,
-                child: Text("Submit",style: TextStyle(
+              ),onPressed: (){
+                String pass = _passwordController.text;
+                String retype = _passwordRetypeController.text;
+                print("$_passwordController \n  $_passwordRetypeController");
+                _register(pass, retype);
+              }
+
+                ,child: Text("Submit",style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20

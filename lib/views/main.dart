@@ -278,59 +278,59 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    child:
-                    Row(children: <Widget>[
-                      Expanded(
-                        child: new Container(
-                            margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                            child: Divider(
-                              color: Colors.lightBlue[900],
-                              height: 50,
-                            )),
-                      ),
-                      Text("OR", style:
-                        TextStyle(
-                          color: Colors.lightBlue[900],
-                          fontSize: 20.0
-                        ),),
-                      Expanded(
-                        child: new Container(
-                            margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                            child: Divider(
-                              color: Colors.lightBlue[900],
-                              height: 50,
-                            )),
-                      ),
-                    ]),
-                  ),
-                  Container(
-
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/google_logo.png"),
-                              height: 25.0,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Text(
-                                'Sign in with Google',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                  )
+                  // Container(
+                  //   child:
+                  //   Row(children: <Widget>[
+                  //     Expanded(
+                  //       child: new Container(
+                  //           margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                  //           child: Divider(
+                  //             color: Colors.lightBlue[900],
+                  //             height: 50,
+                  //           )),
+                  //     ),
+                  //     Text("OR", style:
+                  //       TextStyle(
+                  //         color: Colors.lightBlue[900],
+                  //         fontSize: 20.0
+                  //       ),),
+                  //     Expanded(
+                  //       child: new Container(
+                  //           margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                  //           child: Divider(
+                  //             color: Colors.lightBlue[900],
+                  //             height: 50,
+                  //           )),
+                  //     ),
+                  //   ]),
+                  // ),
+                  // Container(
+                  //
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       child: Row(
+                  //         mainAxisSize: MainAxisSize.min,
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: <Widget>[
+                  //           Image(
+                  //             image: AssetImage("assets/google_logo.png"),
+                  //             height: 25.0,
+                  //           ),
+                  //           Padding(
+                  //             padding: const EdgeInsets.only(left: 10),
+                  //             child: Text(
+                  //               'Sign in with Google',
+                  //               style: TextStyle(
+                  //                 fontSize: 15,
+                  //                 color: Colors.black54,
+                  //                 fontWeight: FontWeight.w600,
+                  //               ),
+                  //             ),
+                  //           )
+                  //         ],
+                  //       ),
+                  //     )
+                  // )
 
                 ],
 
